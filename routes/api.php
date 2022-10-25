@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Models\Book;
 /*
@@ -27,6 +28,8 @@ Route::post('/books',[BookController::class,'store']);
 Route::put('/books/{id}',[BookController::class,'update']);
 Route::delete('/books/{id}',[BookController::class,'destroy']);
 
-// Route::resource('books',BookController::class)->except(
-//     ['create', 'update']
-// );
+Route::get('/authors',[AuthorController::class,'index']);
+Route::get('/authors/{id}',[AuthorController::class,'show']);
+Route::post('/authors',[AuthorController::class,'store']);
+Route::put('/authors/{id}',[AuthorController::class,'update']);
+Route::delete('/authors/{id}',[AuthorController::class,'destroy']);
